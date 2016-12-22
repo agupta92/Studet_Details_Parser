@@ -1,0 +1,36 @@
+--
+-- Table structure for table `student_details`
+--
+
+CREATE TABLE IF NOT EXISTS `student_details` (
+  `student_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `student_name` varchar(255) NOT NULL,
+  `student_contact_no` bigint(20) unsigned NOT NULL,
+  `student_area` varchar(255) NOT NULL,
+  `student_city` varchar(255) NOT NULL,
+  `student_state` varchar(255) NOT NULL,
+  `student_pincode` int(10) unsigned NOT NULL,
+  `student_email_id` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `student_dob` date NOT NULL,
+  `student_gender` enum('female','male') NOT NULL,
+  PRIMARY KEY (`student_id`),
+  UNIQUE KEY `student_contact_no` (`student_contact_no`)  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_fee_details`
+--
+
+CREATE TABLE IF NOT EXISTS `student_fee_details` (
+  `fee_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `student_contact_no` bigint(10) unsigned NOT NULL,
+  `fee_type` enum('monthly','yearly','quarterly') NOT NULL,
+  `fee_payment_date` date NOT NULL,
+  `fee_amount` decimal(10,2) NOT NULL,
+  `late_fee` decimal(10,2) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`fee_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
