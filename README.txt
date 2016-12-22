@@ -1,3 +1,5 @@
+GitHUB Repo : https://github.com/agupta92/Studet_Details_Parser
+
 Explanation:
 
 FileName: ImportStudentDetails.php
@@ -14,3 +16,6 @@ It is a Base class to both the above class which create Database connection and 
 
 Folder: PHPExcel-1.8
 It is a opensource project availavle for effectivly reading and parsing xls files.
+
+FileName: mysql-dump.txt
+It has dump of two table which will be required to store the information.
